@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace CSVReader;
 
 class CSVReader
 {
