@@ -1,0 +1,17 @@
+{
+    "name": "maikdevelops/csv-reader",
+    "description": "Read CSV files with ease.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Michael",
+            "email": "maikdevelops@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
