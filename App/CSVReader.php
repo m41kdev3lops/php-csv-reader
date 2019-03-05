@@ -36,11 +36,17 @@ class CSVReader
             {
                 if ( $rowIndex == 0 )
                 {
-                    $this->headers[] = $value;
+                    if ( $v = self::beautify($value) )
+                    {
+                        $this->headers[] = $v;
+                    }
                     continue;
                 }
 
-                $this->values[] = $value;
+                if ( $v = self::beautify($value) )
+                {
+                    $this->values[] = $v;
+                }
             }
         }
 
@@ -48,5 +54,14 @@ class CSVReader
             'headers'   => $this->headers,
             'values'    => $this->values
         ];
+    }
+
+
+    public static function beautify(string $string)
+    {
+        $string = trim( $string );
+        if ( $string != '' ) return $string;
+
+        return null;
     }
 }
