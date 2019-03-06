@@ -32,6 +32,8 @@ class CSVReader
         {
             $rowValues = explode(',', $row);
 
+            $this->values[$rowIndex] = [];
+
             foreach( $rowValues as $valueIndex => $value )
             {
                 if ( $rowIndex == 0 )
@@ -45,7 +47,7 @@ class CSVReader
 
                 if ( $v = self::beautify($value) )
                 {
-                    $this->values[][$valueIndex] = $v;
+                    $this->values[$rowIndex][] = $v;
                 }
             }
         }
