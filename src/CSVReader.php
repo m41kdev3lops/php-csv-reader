@@ -45,7 +45,7 @@ class CSVReader
 
                 if ( $v = self::beautify($value) )
                 {
-                    $this->values[] = $v;
+                    $this->values[][$valueIndex] = $v;
                 }
             }
         }
